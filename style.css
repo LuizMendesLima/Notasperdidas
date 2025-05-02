@@ -87,7 +87,11 @@ nav ul li a:hover {
 
 
 /* Responsividade */
-@media (max-width: 768px){
+@media (max-width: 500px){
+    .hero{
+        height: 70vh;
+    }
+    
     .hero-content h1 {
         font-size:  22px;
         display: flex;
@@ -106,6 +110,9 @@ nav ul li a:hover {
       margin: 10px 0;
     }
   }
+
+
+
 .btn {
     background-color: #a259ff;
     padding: 10px 20px;
