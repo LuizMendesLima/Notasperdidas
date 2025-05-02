@@ -90,6 +90,9 @@ nav ul li a:hover {
 @media (max-width: 500px){
     .hero{
         height: 70vh;
+        width:;
+        borde-radius: 5px;
+         
     }
     
     .hero-content h1 {
