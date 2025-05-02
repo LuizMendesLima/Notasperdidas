@@ -44,7 +44,7 @@ margin-top: 0; /* remover espaçamento do topo */
 text-align: center;
 height: 90vh; /* ocupa toda a altura da tela */
 width: auto;
-background: linear-gradient(to right, rgba(42, 3, 48, 0.774), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(42, 3, 48, 0.774)), url('baixo.jpg');
+background: linear-gradient(to right, rgba(42, 3, 48, 0.774), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(42, 3, 48, 0.774)), url('../baixo.jpg');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
