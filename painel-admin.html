@@ -1,0 +1,34 @@
+<!-- painel-admin.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Administrador</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+    h2 { color: #333; }
+    .usuario { background: #fff; padding: 10px; border-radius: 8px; margin: 10px 0; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <h2>Usuários Cadastrados</h2>
+  <div id="usuarios"></div>
+
+  <script>
+    const container = document.getElementById('usuarios');
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const chave = localStorage.key(i);
+      const dados = JSON.parse(localStorage.getItem(chave));
+
+      // ignora dados que não têm as chaves de usuário
+      if (!dados || !dados.email || !dados.senha) continue;
+
+      const div = document.createElement('div');
+      div.className = 'usuario';
+      div.innerHTML = `<strong>Usuário:</strong> ${dados.usuario}<br><strong>Email:</strong> ${dados.email}<br><strong>Senha:</strong> ${dados.senha}`;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!-- admin-login.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login ADM</title>
+  <style>
+    body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; background: #eaeaea; }
+    .box { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; }
+    input, button { width: 100%; margin: 10px 0; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    button { background-color: #8a0c0c; color: #fff; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login ADM</h2>
+    <form id="adminForm">
+      <input type="text" name="usuario" placeholder="Admin" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    const admins = [
+      { usuario: "admin1", senha: "4321" },
+      { usuario: "gabriel", senha: "1234" }
+    ];
+
+    const form = document.getElementById('adminForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const usuario = form.usuario.value;
+      const senha = form.senha.value;
+      const autorizado = admins.some(admin => admin.usuario === usuario && admin.senha === senha);
+
+      if (autorizado) {
+        alert("Bem-vindo, administrador!");
+        window.location.href = "painel-admin.html";
+      } else {
+        alert("Acesso negado.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <style>
+    body { font-family: Arial; background: #f2f2f2; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .box { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    button { background-color: #a72881; color: white; border: none; cursor: pointer; }
+    .toggle-senha { background: #8f068f; margin-top: 5px; }
+    a { text-decoration: none; color: #007bff; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Cadastro</h2>
+    <form id="cadastroForm">
+      <input type="text" id="usuario" placeholder="Usuário" required>
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="senha" placeholder="Senha" required>
+      <button type="button" class="toggle-senha" onclick="mostrarSenha()">Mostrar senha</button>
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p style="margin-top: 15px;">
+      Já tem conta? <a href="login.html">Faça login</a>
+    </p>
+  </div>
+
+  <script>
+    function mostrarSenha() {
+      const campoSenha = document.getElementById('senha');
+      campoSenha.type = campoSenha.type === 'password' ? 'text' : 'password';
+    }
+
+    const form = document.getElementById('cadastroForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const usuario = document.getElementById('usuario').value;
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      const dados = { usuario, email, senha };
+
+      localStorage.setItem(usuario, JSON.stringify(dados));
+
+  
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
